@@ -12,7 +12,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        <h1>Hello CodeSandbox</h1>
+        <h1>Hello Aadesh!</h1>
         <Router>
           <Navbar />
           <Routes>

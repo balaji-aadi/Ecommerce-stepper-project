@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import { BsFillEmojiSunglassesFill } from "react-icons/bs"
 import { useTheme } from './theme.context';
 
 const Navbar = () => {
-    const { toggleTheme } = useTheme()
+    const { theme, toggleTheme } = useTheme()
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ marginBottom: "7rem" }} >
+        <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "indianred", marginBottom: "7rem" }} >
             <div className="container-fluid">
                 <Link className="navbar-brand" to={"/"}>Navbar</Link>
                 <div className="collapse navbar-collapse" id="navbarNav">
@@ -32,7 +33,9 @@ const Navbar = () => {
                 </div>
             </div>
             <div style={{ marginRight: "3rem" }}>
-                <BsFillMoonStarsFill onClick={toggleTheme} style={{ cursor: "pointer", fontSize: "1.5rem", color: "black" }} />
+                {theme === "Dark" ?
+                    <BsFillMoonStarsFill onClick={toggleTheme} style={{ cursor: "pointer", fontSize: "1.5rem", color: "black" }} /> :
+                    <BsFillEmojiSunglassesFill onClick={toggleTheme} style={{ cursor: "pointer", fontSize: "1.5rem", color: "black" }} />}
             </div>
         </nav>
     )
