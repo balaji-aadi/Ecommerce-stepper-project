@@ -42,6 +42,7 @@ const Pagination = () => {
             }
             {
                 data.length > 0 && <div className='pagination'>
+                    <span onClick={() => selectPageHandler(1)}>◀◀</span>
                     <span className={page > 1 ? "" : "pagination__disable"} onClick={() => selectPageHandler(page - 1)}>◀</span>
                     {
                         [...Array(data.length / 10)].map((_, i) => {
@@ -49,6 +50,7 @@ const Pagination = () => {
                         })
                     }
                     <span className={page < data.length / 10 ? "" : "pagination__disable"} onClick={() => selectPageHandler(page + 1)}>▶</span>
+                    <span onClick={() => selectPageHandler(data.length / 10)}>▶▶</span>
                 </div>
             }
         </div>

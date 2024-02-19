@@ -40,5 +40,5 @@
 }
 
 .pagination__disable {
-  opacity: -1;
+  display: none;
 }
