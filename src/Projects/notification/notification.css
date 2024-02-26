@@ -1,0 +1,20 @@
+.notify__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.notify__details > ul > li {
+  list-style: none;
+}
+
+.notify__details > ul {
+  background: white;
+  color: black;
+  text-align: left;
+  width: 7rem;
+  border-radius: 5px;
+}

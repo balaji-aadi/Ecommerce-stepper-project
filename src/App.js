@@ -7,12 +7,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Projects/Navbar";
 import Home from "./Projects/Home";
 import { ThemeProvider } from "./Projects/theme.context";
+import Notification from "./Projects/notification/Notification";
 
 export default function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        <h1>Hello Aadesh!</h1>
         <Router>
           <Navbar />
           <Routes>
@@ -20,6 +20,7 @@ export default function App() {
             <Route path="/practice" element={<PracticeWorkbase />} />
             <Route path="/files" element={<NestedFolderFileSystem />} />
             <Route path="/pagination" element={<Pagination />} />
+            <Route path="/notification" element={<Notification />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </Router>

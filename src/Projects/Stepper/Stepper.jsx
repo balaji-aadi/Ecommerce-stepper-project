@@ -27,9 +27,11 @@ const Stepper = () => {
     })
   }
 
+  // This is the main part of calculation
   function calculateProgressBarWidth() {
     return ((currentStep - 1) / (stepperLen - 1)) * 100;
   }
+
 
   useEffect(() => {
     setMargins({

@@ -6,6 +6,23 @@ import { useTheme } from './theme.context';
 
 const Navbar = () => {
     const { theme, toggleTheme } = useTheme()
+
+    function textChanger(id) {
+        return function (content) {
+            document.querySelector("#" + id).textContent = content
+        }
+    }
+
+    const Text = textChanger("theme")
+
+    if (theme === "light") {
+        Text("Sun's in a mood, Shining bright, not subdued.")
+    }
+    else if (theme === "Dark") {
+        Text("Under the moon, A gentle glow, in the gloom")
+    }
+
+
     return (
         <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "indianred", marginBottom: "7rem" }} >
             <div className="container-fluid">
@@ -22,6 +39,9 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link " to={'/pagination'}>Pagination</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link " to={'/notification'}>Notification</Link>
                         </li>
 
                         <li className="nav-item">
