@@ -49,8 +49,23 @@ const Navbar = () => {
                         </li>
 
 
+
                     </ul>
                 </div>
+            </div>
+            <div className='auth__container'>
+                <ul>
+                    <li className="nav-item">
+                        <Link className="nav-link " to={'/login'}>Login</Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link className="nav-link " to={'/register'}>Register</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link " to={'/logout'}>Logout</Link>
+                    </li>
+                </ul>
             </div>
             <div style={{ marginRight: "3rem" }}>
                 {theme === "Dark" ?

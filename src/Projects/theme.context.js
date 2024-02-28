@@ -9,9 +9,14 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleTheme = () => {
     setIsDarkMode((prevState) => !prevState);
+  };
+
+  const handleLoading = (data) => {
+    setIsLoading(data);
   };
 
   const theme = isDarkMode ? "Dark" : "light";
@@ -21,7 +26,9 @@ export const ThemeProvider = ({ children }) => {
   }, [isDarkMode]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider
+      value={{ theme, toggleTheme, isLoading, handleLoading }}
+    >
       {children}
     </ThemeContext.Provider>
   );
